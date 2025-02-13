@@ -5,14 +5,14 @@ Usernames_Passwords = {}
 def Login():
     Login_Username_Given = False
     while Login_Username_Given == False:
-        Login_Username = str(input("Username: "))
+        Login_Username = str(input("Login Username: "))
         Login_Result = Usernames_Passwords.get(Login_Username, "NotFound")
         if Login_Result != "NotFound":
             Login_Username_Given = True
 
             Login_Password_Given = False
             while Login_Password_Given == False:
-                Login_Password = str(input("Password: "))
+                Login_Password = str(input("Login Password: "))
                 if Login_Password == Login_Result:
                     print(f"Login Successful, Welcome {Login_Username}!")
                     Login_Password_Given = True
@@ -26,7 +26,7 @@ def Login():
 def Register():
     Register_Username_Given = False
     while Register_Username_Given == False:
-        Register_Username = str(input("Username: "))
+        Register_Username = str(input("Register Username: "))
         Register_Result = Usernames_Passwords.get(Register_Username, "NotFound")
         if Register_Result == "NotFound":
             Register_Username_Confirmation = False
@@ -40,7 +40,7 @@ def Register():
 
                     Register_Password_Given = False
                     while Register_Password_Given == False:
-                        Register_Password = str(input("Password: "))
+                        Register_Password = str(input("Register Password: "))
                         Register_Password_Confirmation = False
                         while Register_Password_Confirmation == False:
                             Register_Password_Confirm = str(input("Confirm Password? Yes or No: ")).lower()
