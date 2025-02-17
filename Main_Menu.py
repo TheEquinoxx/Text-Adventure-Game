@@ -30,12 +30,15 @@ def New_Game():
 
 
 def Main_Menu():
-    User = str(input("New/Load/Quit: ")).lower()
-    if User == "new":
-        New_Game()
-    elif User == 'load':
-        print("COMING SOON")
-    elif User == 'quit':
-        print("COMING SOON")
-
-# GIT update: New Game Setup logic
+    Main_Menu = False
+    while Main_Menu == False:
+        User = str(input("New/Load/Quit: ")).lower()
+        if User == "new":
+            Main_Menu = True
+            New_Game()
+        elif User == 'load':
+            print("COMING SOON")
+        elif User == 'quit':
+            print("COMING SOON")
+        else:
+            print("Invalid Option")
