@@ -91,13 +91,16 @@ def Username():
 
 
 def Login_Register():
-    User = str(input("Login/Register: ")).lower()
-    if User == "login":
-        Login()
-        Username()
-    elif User == "register":
-        Register()
-        Username()
-
-# GIT update: can now register if login username doesnt exist without having to restart
-# GIT update: saves username as variable to be used in other scripts when calling json Profile
+    Login_Register = False
+    while Login_Register == False:
+        User = str(input("Login/Register: ")).lower()
+        if User == "login":
+            Login_Register = True
+            Login()
+            Username()
+        elif User == "register":
+            Login_Register = True
+            Register()
+            Username()
+        else:
+            print("Invalid Option.")
